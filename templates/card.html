@@ -8,5 +8,12 @@
     <h1>Card View</h1>
     <p>{{card.question}}</p>
     <p>{{card.answer}}</p>
+    <div>
+        <button><a href="{{ url_for('card_view', index=index + 1) }}">Next Card</a></button>
+
+    </div>
+    <div>
+        <a href="{{ url_for('welcome') }}">Home</a>
+    </div>
 </body>
 </html>

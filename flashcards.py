@@ -16,7 +16,7 @@ def card_view(index):
     # try and find a card in the json array at position 'index'
     try:
         card = db[index]
-        return render_template("card.html", card=card)
+        return render_template("card.html", card=card, index=index)
     # if we try and find a card that does not exist in the array, send back a 404 page
     except IndexError:
         abort(404)
