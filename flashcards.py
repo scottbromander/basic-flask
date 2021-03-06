@@ -8,7 +8,7 @@ app = Flask(__name__)
 def welcome():
     return render_template(
         "welcome.html",
-        message="Woohoo! Jinja Vars!"
+        cards=db
     )
 
 @app.route("/card/<int:index>")
@@ -16,7 +16,7 @@ def card_view(index):
     # try and find a card in the json array at position 'index'
     try:
         card = db[index]
-        return render_template("card.html", card=card, index=index)
+        return render_template("card.html", card=card, index=index, max_index=len(db) - 1)
     # if we try and find a card that does not exist in the array, send back a 404 page
     except IndexError:
         abort(404)
@@ -25,3 +25,4 @@ def card_view(index):
 # def card_view():
 #     card = db[0]
 #     return render_template("card.html", card=card)
+
