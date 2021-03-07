@@ -26,6 +26,11 @@ def card_view(index):
 #     card = db[0]
 #     return render_template("card.html", card=card)
 
+@app.route('/add_card')
+def add_card():
+    return render_template("add_card.html")
+
+# REST ENDPOINTS
 @app.route("/api/card")
 def api_card_list():
     return jsonify(db)
