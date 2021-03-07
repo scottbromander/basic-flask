@@ -1,4 +1,4 @@
-from flask import Flask, render_template, abort, jsonify
+from flask import Flask, render_template, abort, jsonify, request
 
 from model import db
 
@@ -26,9 +26,15 @@ def card_view(index):
 #     card = db[0]
 #     return render_template("card.html", card=card)
 
-@app.route('/add_card')
+@app.route('/add_card', methods=["GET", "POST"])
 def add_card():
-    return render_template("add_card.html")
+    if request.method == "POST":
+        # Form
+        card = {"question": request.form['question'],
+                "answer": request.form['answer']}
+        db.append(card)
+    else:
+        return render_template("add_card.html")
 
 # REST ENDPOINTS
 @app.route("/api/card")
