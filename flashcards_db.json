@@ -1,14 +1,1 @@
-[
-  {
-    "question": "What is Scott's favorite band?",
-    "answer": "Trick question, there are two: Deftones and Chevelle"
-  },
-  {
-    "question": "What programming language is Scott best at?",
-    "answer": "JavaScript"
-  },
-  {
-    "question": "What two core languages has Scott built development bootcamps around?",
-    "answer": "JavaScript and Java"
-  }
-]
+[{"question": "What is Scott's favorite band?", "answer": "Trick question, there are two: Deftones and Chevelle"}, {"question": "What programming language is Scott best at?", "answer": "JavaScript"}, {"question": "What two core languages has Scott built development bootcamps around?", "answer": "JavaScript and Java"}, {"question": "What is Scott excited about learning in March 2021?", "answer": "Astrodynamics"}]
