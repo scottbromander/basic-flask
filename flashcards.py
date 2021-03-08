@@ -1,4 +1,4 @@
-from flask import Flask, render_template, abort, jsonify, request
+from flask import (Flask, render_template, abort, jsonify, request, redirect, url_for)
 
 from model import db
 
@@ -33,6 +33,7 @@ def add_card():
         card = {"question": request.form['question'],
                 "answer": request.form['answer']}
         db.append(card)
+        return redirect(url_for('card_view', index = len(db) - 1))
     else:
         return render_template("add_card.html")
 
