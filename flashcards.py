@@ -38,6 +38,17 @@ def add_card():
     else:
         return render_template("add_card.html")
 
+@app.route('/remove_card/<int:index>', methods=["GET", "POST"])
+def remove_card(index):
+    if request.method == "POST":
+        # Delete from DB
+        del db[index]
+        save_db()
+        return redirect(url_for("welcome"))
+    else:
+        card = db[index]
+        return render_template("remove_card.html", card=card, index=index)
+
 # REST ENDPOINTS
 @app.route("/api/card")
 def api_card_list():
